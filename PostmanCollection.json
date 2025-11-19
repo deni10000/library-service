@@ -1,0 +1,394 @@
+{
+  "info": {
+    "name": "Library test",
+    "description": "API collection for testing Neo Presentation Microservices (Account and Book Services)",
+    "_postman_id": "neo-presentation-api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collections.json"
+  },
+  "item": [
+    {
+      "name": "Account Service",
+      "item": [
+        {
+          "name": "Get All Accounts",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/accounts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "accounts"
+              ]
+            },
+            "description": "Get all accounts from the account service"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Иван\",\n  \"surname\": \"Иванов\",\n  \"age\": 25\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/accounts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "accounts"
+              ]
+            },
+            "description": "Create a new account"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Account by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/accounts/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "accounts",
+                "1"
+              ]
+            },
+            "description": "Get account by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Account by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/accounts/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "accounts",
+                "1"
+              ]
+            },
+            "description": "Delete an account by ID"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Book Service",
+      "item": [
+        {
+          "name": "Get All Books",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/books",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "books"
+              ]
+            },
+            "description": "Get all books from the book service"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Book by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/books/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "books",
+                "1"
+              ]
+            },
+            "description": "Get book by ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Book",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Война и мир\",\n  \"author\": \"Лев Толстой\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/books",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "books"
+              ]
+            },
+            "description": "Create a new book"
+          },
+          "response": []
+        },
+        {
+          "name": "Borrow Book",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 1\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/books/1/borrow",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "books",
+                "1",
+                "borrow"
+              ]
+            },
+            "description": "Borrow a book for a user"
+          },
+          "response": []
+        },
+        {
+          "name": "Return Book",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 1\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/books/1/return",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "books",
+                "1",
+                "return"
+              ]
+            },
+            "description": "Return a borrowed book"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Available Books",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/books/available",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "books",
+                "available"
+              ]
+            },
+            "description": "Get all available books"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Borrowed Books",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/books/borrowed",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "books",
+                "borrowed"
+              ]
+            },
+            "description": "Get all borrowed books"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Books by User",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/books/user/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "books",
+                "user",
+                "1"
+              ]
+            },
+            "description": "Get books borrowed by a specific user"
+          },
+          "response": []
+        },
+        {
+          "name": "Search Books",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/books/search?query=война",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "books",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "query",
+                  "value": "война"
+                }
+              ]
+            },
+            "description": "Search books by title or author"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [],
+  "protocolProfileBehavior": {}
+}

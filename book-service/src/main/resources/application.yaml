@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: book-service
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/bookdb}
+    username: ${USER_DB:postgres}
+    password: ${PASSWORD_DB:password}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+user:
+  service:
+    url: ${USER_SERVICE_URL:http://localhost:8081}
+
+logging:
+  level:
+    ru.neoflex.bookservice: DEBUG
+    org.springframework.cloud.openfeign: DEBUG 
